@@ -1,9 +1,11 @@
 const userMessage = [
     ["hi", "hey", "hello"],
+    ["can you help me with something"],
     ["sure", "yes", "no"],
     ["are you genious", "are you nerd", "are you intelligent"],
     ["i hate you", "i dont like you"],
     ["how are you", "how is life", "how are things", "how are you doing"],
+    ["I am fine","fine","good"],
     ["what are you doing", "what is going on", "what is up"],
     ["how old are you"],
     ["who are you", "are you human", "are you bot", "are you human or bot"],
@@ -24,14 +26,19 @@ const userMessage = [
     ["what should i eat today"],
     ["bro"],
     ["what", "why", "how", "where", "when"],
-    ["corona", "covid19", "coronavirus"],
     ["you are funny"],
     ["i dont know"],
     ["boring"],
-    ["im tired"]
+    ["im tired"],
+    ["cns","cryptography and network security"],
+    ["ai","artificial intelligence"],
+    ["mad","mobile application development"],
+    ["internals","when are the internals","midsem"],
+    ["time table","What is the time table","what is our daily schedule","lectures"]
   ];
   const botReply = [
     ["Hello!", "Hi!", "Hey!", "Hi there!"],
+    ["Sure you can ask anything!","I am here to help"],
     ["Okay"],
     ["Yes I am! "],
     ["I'm sorry about that. But I like you dude."],
@@ -40,8 +47,7 @@ const userMessage = [
       "Pretty well, how are you?",
       "Fantastic, how are you?"
     ],
-
-  
+    ["Good to hear"],
     [
       "Nothing much",
       "About to go to sleep",
@@ -60,17 +66,18 @@ const userMessage = [
     ["Briyani", "Burger", "Sushi", "Pizza"],
     ["Dude!"],
     ["Yes?"],
-    ["Please stay home"],
     ["Glad to hear it"],
     ["Say something interesting"],
     ["Sorry for that. Let's chat!"],
-    ["Take some rest, Dude!"]
+    ["Take some rest, Dude!"],
+    ["CNS Syllabus : <a href='https://s3-ap-southeast-1.amazonaws.com/gtusitecirculars/Syallbus/3161606.pdf' target='_blank'>Here</a> <br>Reading Material CNS : <a href='https://darshan.ac.in/gtu-study-material/2170709-Information-and-Network-Security' target='_blank'>Here</a>"],
+    ["AI Syllabus : <a href='https://s3-ap-southeast-1.amazonaws.com/gtusitecirculars/Syallbus/3170716.pdf' target='_blank'>Here</a> <br>Reading Material AI :  <a href='https://darshan.ac.in/gtu-study-material/3170716-Artificial-Intelligence' target='_blank'>Here</a>"],
+    ["MAD Syllabus : <a href='https://s3-ap-southeast-1.amazonaws.com/gtusitecirculars/Syallbus/3170726.pdf' target='_blank'>Here</a> <br>Reading Material MAD : <a href='https://darshan.ac.in/gtu-study-material/3170726-Mobile-Application-Development' target='_blank'>Here</a>"],
+    ["Internal's Schedule : <a href='file:///N:/Projects/Chat%20Bot/Exam.Schedule_sem_VI.pdf' target='_blank'>Here</a>"],
+    ["Click <a href='file:///N:/Projects/Chat%20Bot/TYIT2_TT.pdf' target='_blank'>here</a> to see it"]
   ];
   
   const alternative = [
-    "Same here, dude.",
-    "That's cool! Go on...",
-    "Dude...",
     "Ask something else...",
     "Hey, I'm listening..."
   ];
@@ -136,7 +143,7 @@ const userMessage = [
         "Bye, See you!",
         "Dude, Bye. Take care of your health in this situation."
       ],
-      ["Good Night, dude", "Have a sound sleep", "Sweet dreams"],
+      ["Good Night", "Have a sound sleep", "Sweet dreams"],
       ["Have a pleasant evening!", "Good evening too", "Evening!"],
       ["Good morning, Have a great day!", "Morning, dude!"],
       ["Good Afternoon", "Noon, dude!", "Afternoon, dude!"]
@@ -159,18 +166,22 @@ const userMessage = [
   }
   function addChat(input, product) {
     const mainDiv = document.getElementById("message-section");
+    
+    //User Message
     let userDiv = document.createElement("div");
     userDiv.id = "user";
     userDiv.classList.add("message");
     userDiv.innerHTML = `<span id="user-response">${input}</span>`;
     mainDiv.appendChild(userDiv);
   
+    //Bot Message
     let botDiv = document.createElement("div");
     botDiv.id = "bot";
     botDiv.classList.add("message");
     botDiv.innerHTML = `<span id="bot-response">${product}</span>`;
     mainDiv.appendChild(botDiv);
     
+    //Scroll to bottom of the chat
     var scroll = document.getElementById("message-section");
     scroll.scrollTop = scroll.scrollHeight;
   }
